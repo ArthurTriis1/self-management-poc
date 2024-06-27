@@ -1,0 +1,1 @@
+export { SelfManagementPage } from "./SelfManagementPage";
