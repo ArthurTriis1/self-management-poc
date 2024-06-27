@@ -2,12 +2,22 @@
   "name": "@vtex/self-management-poc",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
+    },
+    "./src/*": "./src/*"
+  },
+  
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch"
+    "dev": "tsc --watch",
+    "build": "tsc --module commonjs --outDir dist/cjs & tsc --module esnext --outDir dist/esm"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +26,9 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
-    "tsup": "^8.1.0",
     "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@faststore/ui": "^3.0.75"
   }
 }
