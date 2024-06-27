@@ -1,7 +1,7 @@
 {
-  "name": "@vtex/self-management-poc",
+  "name": "@poc/self-management-poc",
   "version": "1.0.0",
-  "description": "",
+  "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
@@ -14,14 +14,13 @@
     },
     "./src/*": "./src/*"
   },
-  
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc --module commonjs --outDir dist/cjs & tsc --module esnext --outDir dist/esm"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -30,5 +29,6 @@
   },
   "dependencies": {
     "@faststore/ui": "^3.0.75"
-  }
+  },
+  "description": ""
 }
